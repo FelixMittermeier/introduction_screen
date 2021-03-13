@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class IntroButton extends StatelessWidget {
@@ -5,20 +6,10 @@ class IntroButton extends StatelessWidget {
   final Widget child;
   final Color? color;
 
-  const IntroButton({Key? key, this.onPressed, required this.child, this.color})
-      : super(key: key);
+  const IntroButton({Key? key, this.onPressed, required this.child, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      child: child,
-      style: TextButton.styleFrom(
-        primary: color,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-      ),
-    );
+    return CupertinoButton(onPressed: onPressed, child: child);
   }
 }
